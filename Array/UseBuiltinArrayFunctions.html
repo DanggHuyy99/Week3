@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using built-in array functions</title>
+</head>
+
+<body>
+    <h1>Using built-in array functions</h1>
+    <div>
+        <button onclick="Sheet1()">Bài 1</button>
+        <p id="show1"></p>
+    </div>
+    <div>
+        <button onclick="Sheet2()">Bài 2</button> <br>
+        <input type="number" placeholder="0" id="number">
+        <p id="show2"></p>
+    </div>
+    <div>
+        <button onclick="Sheet3()">Bài 3</button> <br>
+        <input type="text" placeholder="Text here" id="text">
+        <p id="show3"></p>
+    </div>
+
+    <script>
+        function Sheet1() {
+            let myColor = ["Red", "Green", "White", "Black"];
+            console.log(myColor.toString());
+            document.getElementById('show1').innerHTML = myColor;
+        }
+
+        function Sheet2() {
+            let number = document.getElementById('number').value;
+            // console.log(typeof(number));
+            // let numberArray = number.toString();     
+            let modd = "";
+            console.log(modd);
+            for (let i = 1; i < number.length; i++) {
+                if (((number[i - 1]) % 2 === 0) && ((number[i] % 2 === 0))) {
+                    modd += ' - ' + number[i]
+                } else {
+                    modd += (number[i]);
+                }
+            }
+            document.getElementById('show2').innerText = modd
+        }
+
+        function Sheet3() {
+            let texxt = "";
+            let text = document.getElementById('text').value;
+            for (let i = 0; i < text.length; i++) {
+                if (text[i] == text[i].toLowerCase()) {
+                    texxt += text[i].toUpperCase();
+                }
+                else {
+                    texxt += text[i].toLowerCase();
+                }
+            }
+            document.getElementById('show3').innerHTML = texxt;
+        }
+
+    </script>
+
+
+</body>
+
+</html>
