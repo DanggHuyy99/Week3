@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary</title>
+</head>
+
+<body>
+    <input type="text" id="show"> <button onclick="search()">Dịch</button>
+    <div>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function search() {
+            let vietnamese = ["Thằn lằn", "Rồng", "Rắn", "Hổ"];
+            let english = ["Chameleon", "Dragon", "Snake", "Tiger"];
+            let show = document.getElementById('show').value;
+            for (let i = 0; i < vietnamese.length; i++) {
+                if (show == vietnamese[i]) {
+                    document.getElementById('result').innerHTML = english[i];
+                    break;
+
+                } else if (show == english[i]) {
+                    document.getElementById('result').innerHTML = vietnamese[i];
+                    break;
+                } else {
+                    document.getElementById('result').innerHTML = "Chưa có trong từ điển";
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>
