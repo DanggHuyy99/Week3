@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>negative integer in a string</h1>
+
+    <script>
+        let size = Number(prompt("Nhập số lượng phần tử muốn hiển thị trong mảng"))
+        let numbers = Array(size);
+        for (let i = 0; i < numbers.length; i++) {
+            numbers[i] = Math.floor(Math.random() * (200 + 100) - 150);
+            if (numbers[i] < 0) {
+                document.write(numbers[i] + "<br>");
+                console.log(numbers[i]);
+            } else {
+                console.log(numbers[i]);
+            }
+        }
+    </script>
+</body>
+
+</html>

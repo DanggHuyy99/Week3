@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>reverses the elements in that array</h1>
+
+    <script>
+        let size = Number(prompt("Nhập số lượng phần tử muốn hiển thị trong mảng"))
+        let numbers = Array(size);
+        for (let i = 0; i < numbers.length; i++){
+            numbers[i] = Math.floor(Math.random()*100);
+            console.log(numbers[i]);
+            document.write(numbers[i] + "&nbsp");
+        }
+        document.write("<br>" + "Reverse Array:" + "<br>");
+        let reverse = (numbers.reverse()).join(" ");
+        document.write(reverse);
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>maximum value and average value of the elements in the array</h1>
+
+    <script>
+        let numbers = [];
+        let max = 0;
+        let h = 0;
+        let total = 0;
+        let average = 0;
+        for (let i = 0; i < 10; i++) {
+            numbers[i] = Math.floor(Math.random() * 100);
+            if (numbers[i] > max) {
+                max = numbers[i];
+                h = i;
+                console.log(numbers[i]);
+                total += numbers[i];
+                average = total / i;
+            } else {
+                console.log(numbers[i])
+                total += numbers[i];
+                average = total / i;
+            }
+        }
+        document.write("Giá trị lớn nhất là: " + max + " nằm ở vị trí thứ " + h + "<br>");
+        document.write("Giá trị trung bình của các số nguyên trong mảng là: " + average.toFixed(2));
+    </script>
+</body>
+
+</html>
