@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+</head>
+
+<body>
+    <h1>Caro Game</h1>
+    <input type="button" value="Change Value" onclick="change()">
+    <p id="caro"></p>
+
+    <script>
+        let numberTest = 2;
+        let caroTable = document.getElementById('caro');
+        let table = [];
+        let text = "";
+        for (let i = 0; i < 7; i++) {
+            table[i] = ["♥", "♥", "♥", "♥", "♥", "♥", "♥",];
+        }
+
+        for (let i = 0; i < 7; i++) {
+            text += "<br>";
+            for (let j = 0; j < 7; j++) {
+                text += table[i][j] + "&nbsp;&nbsp;&nbsp;"
+            }
+        }
+        caroTable.innerHTML = text;
+
+
+        function change() {
+            let text = "";
+            let nhapX = Number(prompt('Nhập toạ độ X'));
+            let nhapY = Number(prompt('Nhập toạ độ Y'));
+            if (numberTest % 2 == 0) {
+                table[nhapX][nhapY] = "x";
+            } else {
+                table[nhapX][nhapY] = "y";
+            }
+            numberTest++;
+            for (let i = 0; i < 7; i++) {
+                text += "<br>";
+                for (let j = 0; j < 7; j++) {
+                    text += table[i][j] + "&nbsp;&nbsp;&nbsp;";
+                }
+            }
+            caroTable.innerHTML = text;
+
+
+            for (let i = 0; i < 7; i++) {
+                for (let j = 0; j < 7; j++) {
+                    if (table[i][j] === "x" && table[i][j + 1] === "x" && table[i][j + 2] === "x" && table[i][j + 3] === "x" && table[i][j + 4] === "x" ||
+                        table[i][j] === "x" && table[i + 1][j] === "x" && table[i + 2][j] === "x" && table[i + 3][j] === "x" && table[i + 4][j] === "x" ||
+                        table[i][j] === "x" && table[i + 1][j + 1] === "x" && table[i + 2][j + 2] === "x" && table[i + 3][j + 3] === "x" && table[i + 4][j + 4] === "x") {
+                        text += table[i][j] + "&nbsp;&nbsp;&nbsp;";
+                        alert("x win");
+                    } else if (table[i][j] === "y" && table[i][j + 1] === "y" && table[i][j + 2] === "y" && table[i][j + 3] === "y" && table[i][j + 4] === "y" ||
+                        table[i][j] === "y" && table[i + 1][j] === "y" && table[i + 2][j] === "y" && table[i + 3][j] === "y" && table[i + 4][j] === "y" ||
+                        table[i][j] === "y" && table[i + 1][j + 1] === "y" && table[i + 2][j + 2] === "y" && table[i + 3][j + 3] === "y" && table[i + 4][j + 4] === "y") {
+                        text += table[i][j] + "&nbsp;&nbsp;&nbsp;";
+                        alert('y win');
+                    }
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>
