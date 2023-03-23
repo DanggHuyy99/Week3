@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faking Type</title>
+</head>
+
+<body>
+    <h1>Type anything slowly</h1>
+    <textarea id="textarea" cols="30" rows="10" onkeydown="typeHere()"></textarea>
+
+    <script>
+        let count = 0;
+        let text = "";
+        let huy = ['N', 'g', 'u', 'y', 'ễ', 'n', ' ', 'Đ', 'ă', 'n', 'g', ' ', 'H', 'u', 'y'];
+        console.log(huy.length);
+        function typeHere() { 
+            setTimeout (function() {
+                if (count == huy.length) {
+                    document.getElementById('textarea').value = " ";
+                    text= "";
+                    count = 0;
+                } else {
+                    text += huy[count];
+                    document.getElementById('textarea').value = text;
+                    count++;
+                }
+            }, 0.1)
+        }
+    </script>
+</body>
+
+</html>
