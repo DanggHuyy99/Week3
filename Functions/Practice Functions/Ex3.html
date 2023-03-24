@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nhập 1 số <input type="number" id="show">
+    Nhập 1 số <input type="number" id="show2">
+    <br>
+    <button onclick="compare()">Kết quả</button>
+    <p id="result"></p>
+
+    <script>
+        function compareTwoNumber(a, b){
+            if (Number(a) > Number(b)){
+                return document.getElementById('result').innerHTML = a + " lớn hơn " + b;
+            } else {
+                let result = Number(a) + Number(b);
+                return result;
+            }
+        }
+
+        function compare(){
+            let num_1 = document.getElementById('show').value;
+            let num_2 = document.getElementById('show2').value;
+            let result = compareTwoNumber(num_1, num_2);
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</body>
+</html>
