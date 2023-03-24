@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Find the smallest value of the array</h1>
+
+    <script>
+        function createRandomArray(size, min, max) {
+            let arr = [];
+            for (let i = 0; i < size; i++) {
+                arr[i] = Math.floor(Math.random() * (max - min + 1) + min);
+            }
+            return arr;
+        }
+
+        function minArray(arr){
+            let min = arr[0];
+            for (let i = 0; i < arr.length; i++){
+                if (arr[i] < min){
+                    min = arr[i];
+                }
+            }
+            return min;
+        }
+        let arr_1 = createRandomArray(5, 1, 15);
+        document.write("Mảng 1:  " + arr_1.join(" ") + "<br>");
+        document.write("Giá trị nhỏ nhất:  " + minArray(arr_1) + "<br>" + "<br>");
+        
+        let arr_2 = createRandomArray(10, 10, 150);
+        document.write("Mảng 2:  " + arr_2.join(" ") + "<br>");
+        document.write("Giá trị nhỏ nhất:  " + minArray(arr_2) + "<br>" + "<br>");
+
+        let arr_3 = createRandomArray(15, 5, 170);
+        document.write("Mảng 3:  " + arr_3.join(" ") + "<br>");
+        document.write("Giá trị nhỏ nhất:  " + minArray(arr_3) + "<br>" + "<br>");
+
+        let arr_4 = createRandomArray(20, 30, 250);
+        document.write("Mảng 4:  " + arr_4.join(" ") + "<br>");
+        document.write("Giá trị nhỏ nhất:  " + minArray(arr_4));
+
+        
+    </script>
+</body>
+
+</html>
