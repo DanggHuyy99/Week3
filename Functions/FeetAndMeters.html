@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td{
+            width: 100px;
+            height: 40px;
+            text-align: center;
+        }
+        input{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>convert between feet and meters</h1>
+    <table>
+        <thead>
+            <tr>
+                <td></td>
+                <td>Feet</td>
+                <td></td>
+                <td>Meters</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Enter a Number</td>
+                <td>
+                    <input type="number" id="feet" oninput="feetToMeters()">
+                </td>
+                <td> = </td>
+                <td>
+                    <p id="result"></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <thead>
+            <tr>
+                <td></td>
+                <td>Meters</td>
+                <td></td>
+                <td>Feet</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Enter a Number</td>
+                <td>
+                    <input type="number" id="Meters" oninput="MetersToFeet()">
+                </td>
+                <td> = </td>
+                <td>
+                    <p id="result_2"></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function covertFeetToMeters(a){
+            let result = 0.305 * a;
+            return result;
+        }
+
+        function feetToMeters(){
+            let number = document.getElementById('feet').value;
+            let result = covertFeetToMeters(number)
+            document.getElementById('result').innerHTML = result;
+        }
+
+        function covertMetersToFeet(b){
+            let result_2 = 3.279 * b;
+            return result_2;
+        }
+
+        function MetersToFeet(){
+            let number_2 = document.getElementById('Meters').value;
+            let result_2 = covertMetersToFeet(number_2);
+            document.getElementById('result_2').innerHTML = result_2;
+            console.log(result_2);
+        }
+    </script>
+</body>
+</html>
