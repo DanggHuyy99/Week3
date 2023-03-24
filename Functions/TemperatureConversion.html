@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Temperature conversion</h1>
+
+    <p>Fahrenheit</p>
+    <input type="number" id="inp" oninput="changeTemperature()">
+    <p>Celcius</p>
+    <p id="result"></p>
+
+    <script>
+        function change(b){
+            let result = (5 / 9) * (b - 32);
+            console.log(result);
+            return result.toFixed(2) + "<sub>o</sub>C";
+        }
+
+        function changeTemperature(a, b){
+            let inp = document.getElementById('inp').value;
+            let result = change(inp);
+            document.getElementById('result').innerText = result;
+        }
+    </script>
+</body>
+</html>
