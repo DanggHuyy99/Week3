@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p>Nhập 1 số</p>
+        <input type="number" id="show_1">
+        <p id="result_1"></p>
+        <p>Nhập 1 số</p>
+        <input type="number" id="show_2">
+        <p id="result_2"></p>
+    </div>
+    <br><br>
+    <div>
+        <button onclick="swap()">Swap</button>
+
+    </div>
+
+    <script>
+        function swapTwoNumber(a){
+            let result = Number(a);
+            return result;
+        }
+
+        function swap(){
+            let number_1 = document.getElementById('show_1').value;
+            let number_2 = document.getElementById('show_2').value;
+            let result_1 = swapTwoNumber(number_2);
+            let result_2 = swapTwoNumber(number_1);
+            document.getElementById('result_1').innerHTML = result_1;
+            document.getElementById('result_2').innerHTML = result_2;
+        }
+    </script>
+</body>
+
+</html>

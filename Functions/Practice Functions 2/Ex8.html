@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p>Nhập 1 số</p>
+        <input type="number" id="show">
+        <button onclick="reverseNumber()">Reverse</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function reverse(a){
+            let result = parseFloat(a.split('').reverse().join('')) * Math.sign(a);
+            return result;
+        }
+        function reverseNumber(){
+            let number = document.getElementById('show').value;
+            let result = reverse(number);
+            document.getElementById('result').innerHTML = result;
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+</head>
+
+<body>
+    <h1>Palindrome</h1>
+    <div>
+        <p>Nhập 1 từ</p>
+        <input type="text" id="show">
+        <button onclick="Palindrome1()">Check</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function palindrome(a) {
+            let result = "";
+            let text = a.toLowerCase().split("");
+            let len = text.length;
+            for (let i = 0; i < len; i++){
+                if (text[i] == "," || text[i] == " " || text[i] == " - "){
+                   text.splice(i, 1);
+                }
+              
+            }
+           let len2 = text.length
+            for (let i = 0; i < len2 / 2; i++) {
+                if (text[i] != text[len2 - 1 - i]) {
+                    console.log(text[i]);
+                    console.log(text[len2    - 1 - i]);
+                    result += "false";
+                    return result;
+                }
+            } 
+            result += "true";
+            return result;
+        }
+
+        function Palindrome1() {
+            let text = document.getElementById('show').value;
+            let result = palindrome(text);
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</body>
+
+</html>

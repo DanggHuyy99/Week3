@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>Nhập 1 số để kiểm tra có phải số nguyên dương không </p>
+        <input type="number" id="show" oninput="integer()">
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function checkInteger(a){
+            let result = "";
+            if (Number(a) % 2 === 0){
+                result += "True";
+            } else {
+                result += "False";
+            }
+            return result;
+        }
+        function integer(){
+            let number = document.getElementById('show').value;
+            let result = checkInteger(number);
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Nhập 1 số</p>
+    <input type="number" id="average" oninput="average()">
+    <p id="result"></p>
+    <script>
+        function square(a){
+            let result = Number(a) * Number(a);
+            return result;
+        }
+
+        function average(){
+            let number = document.getElementById('average').value;
+            let result = square(number);
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</body>
+</html>
